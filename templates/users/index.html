@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+
+{% block title %}user list{% end %}
+
+{% block csses %}
+{% end %}
+
+{% block main_content %}
+  <div>
+    <a href="/users?method=new">新建</a>
+    <ul>
+      {% for user in users %}
+        <li class="li_no_style">
+          <span>{{user['name']}}</span>
+          <span>{{user['age']}}</span>
+          <a href="/users?method=edit&id={{user['id']}}">修改</a>
+          <a href="/users?method=delete&id={{user['id']}}">删除</a>
+        </li>
+      {% end %}
+    </ul>   
+  </div>
+{% end %}

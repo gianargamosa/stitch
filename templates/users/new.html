@@ -1,0 +1,14 @@
+{% extends "../base.html" %}
+
+{% block title %}user edit{% end %}
+
+{% block main_content %}
+  <a href="/users">返回</a>
+  <form action="/users" method="post">
+    姓名：<input name="name" type="text" />
+    年龄：<input name="age" type="text" />
+    <input type="submit" value="提交" />
+  </form>
+{% end %}
+
+
