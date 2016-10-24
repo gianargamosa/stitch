@@ -19,7 +19,7 @@ import os
 # print names
 
 settings = {
-  "template_path" : os.path.join(os.path.dirname(__file__), "templates"),
+  "template_path" : os.path.join(os.path.dirname(__file__), "views"),
   "static_path" : os.path.join(os.path.dirname(__file__), "assets"),
   "cookie_secret": "61oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2XdTP1o/Vo=",
   "xsrf_cookies": False,
