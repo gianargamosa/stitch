@@ -2,6 +2,7 @@
 #coding:utf-8
 
 from middlewares import *
+from models import *
 
 import tornado.ioloop
 import tornado.web
@@ -11,11 +12,11 @@ import routes
 import sys
 import os
 
-db = mysql_middleware.db()
-db.cache(60)
+# user_model.user_model()
 
-names = db.run_query("SELECT * FROM users")
-print names
+# seeds.user_faker()
+# seeds.contact_faker()
+# print names
 
 settings = {
   "template_path" : os.path.join(os.path.dirname(__file__), "templates"),

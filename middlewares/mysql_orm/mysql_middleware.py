@@ -8,7 +8,7 @@ import datetime
 import __main__
 import sys
 
-class db:
+class mysql:
 
   _conn = None
   _db = None

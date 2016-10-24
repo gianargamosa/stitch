@@ -5,10 +5,12 @@
 #coding:utf-8
 
 from base_handler import  BaseHandler
+from models import *
 
 class MainHandler(BaseHandler):
     def get(self):
-      self.render('index.html')
+      users = user_model.user_model()
+      self.render('index.html', users=users)
 
 
 
