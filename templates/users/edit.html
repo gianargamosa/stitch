@@ -3,12 +3,12 @@
 {% block title %}user edit{% end %}
 
 {% block main_content %}
-  <a href="/users">返回</a>
+  <a href="/users">users</a>
   <form action="/users" method="post">
     <input name="method" type="hidden" value="put" />
     <input name="id" type="hidden" value="{{user['id']}}" />
-    姓名：<input name="name" type="text" value="{{user['name']}}"/>
-    年龄：<input name="age" type="text" value="{{user['age']}}" />
+    username：<input name="name" type="text" value="{{user['name']}}"/>
+    password：<input name="age" type="text" value="{{user['age']}}" />
     <input type="submit" value="提交" />
   </form>
 {% end %}
