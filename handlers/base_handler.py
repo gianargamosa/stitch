@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 #coding:utf-8
 
-import tornado
-import tornado.web
+from modules import *
 
 class BaseHandler(tornado.web.RequestHandler):
     def __init__(self, application, request, **kwargs):
-        super(BaseHandler,self).__init__(application,request)
+        super(BaseHandler, self).__init__(application, request)
 
     def write_error(self, status_code, **kwargs):
         if status_code == 404:
@@ -20,16 +19,22 @@ class BaseHandler(tornado.web.RequestHandler):
         return 'user'
 
     def get(self):
-        method = self.get_argument("method",None)
+        method = self.get_argument("method", None)
+
         if method == 'new':
             return self.new()
+
         elif method == 'edit':
             return self.edit()
+
+        elif method == 'delete':
+            return self.delete()
+
         else:
             return self.index()
 
     def post(self):
-        method = self.get_argument("method",None)
+        method = self.get_argument("method", None)
         if method == "put":
             return self.put()
         else:

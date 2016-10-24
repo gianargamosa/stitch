@@ -1,32 +1,19 @@
-{% extends "base.html" %}
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"0>
+    <title>
+      {% block title %}Tornado Test{% end %}
+    </title>
 
-{% block title %}index{% end %}
+    {% block javascripts %}{% end %}
 
-{% block main_content %}
-  hello,this is the index page
-  <a href='/users'>users</a>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Fullname</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Address</th>
-      <th>Biography</th>
-      <th>Status</th>
-    </tr>
-   {% for user in users %}
-     <tr>
-       <td>{{ user['id'] }}</td>
-       <td>{{ user['fullname'] }}</td>
-       <td>{{ user['username'] }}</td>
-       <td>{{ user['email'] }}</td>
-       <td>{{ user['password'] }}</td>
-       <td>{{ user['address'] }}</td>
-       <td>{{ user['biography'] }}</td>
-       <td>{{ user['status'] }}</td>
-     </tr>
-   {% end %}
- </table>
-{% end %}
+    <!-- <link href="/static/stylesheets/base.css" media="screen" rel="stylesheet" type="text/css"> -->
+    {% block csses %}{% end %}
+  </head>
+  <body>
+    <div id="main_content" style="width:700px;float:left;">
+      {% block main_content %} 
+      {% end %}
+    </div>
+  </body>
+</html>

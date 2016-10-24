@@ -3,8 +3,8 @@
 from handlers import *
 
 urls = [
-  (ur"/", MainHandler),
-  (ur"/users", UsersHandler),
-  (ur"/users/new", UsersHandler),
-  (ur"/users/edit", UsersHandler)
+  (ur"/", main_handler.MainHandler),
+  (ur"/users", users_handler.UsersHandler),
+  (ur"/users/new", users_handler.UsersHandler),
+  (ur"/users/edit", users_handler.UsersHandler)
 ]

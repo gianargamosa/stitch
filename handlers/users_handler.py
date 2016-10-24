@@ -26,7 +26,7 @@ class UsersHandler(BaseHandler):
         cursor.execute("commit")
         cursor.close()
         con.close()
-        self.redirect('/users')     
+        self.redirect('/users')
 
     def new(self):
         self.render('users/new.html')
