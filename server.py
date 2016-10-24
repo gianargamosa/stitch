@@ -12,9 +12,13 @@ import routes
 import sys
 import os
 
+# f = Faker()
+
+# print f.name()
+
 # user_model.user_model()
 
-# seeds.user_faker()
+# seeds.seed_user()
 # seeds.contact_faker()
 # print names
 
@@ -28,11 +32,12 @@ settings = {
 def make_app():
   return tornado.web.Application(
     routes.urls,
+    debug=True,
     **settings
   )
 
 if __name__ == "__main__":
   app = make_app()
-  app.listen(8000)
+  app.listen(8888)
   tornado.options.parse_command_line()
   tornado.ioloop.IOLoop.instance().start()

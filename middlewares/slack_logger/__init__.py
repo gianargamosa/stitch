@@ -1,0 +1,1 @@
+from slack_logger_middleware import TornadoSlackHandler

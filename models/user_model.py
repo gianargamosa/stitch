@@ -1,9 +1,9 @@
 from middlewares import *
-import model
+import settings
 
-mysql = model.mysql()
+mysql = settings.mysql()
 mysql.cache(60)
 
-def user_model():
+def select_user():
   return mysql.run_query("SELECT * FROM users")
     

@@ -54,18 +54,18 @@ class mysql:
         start = time.clock()
         self._content = self._cache.content()
         end = time.clock()
-        print 'CACHE ( %.5f sec ) ' % (end - start) + sql, args
+        print 'CACHE ( %.2fms ) ' % (end - start) + sql, args
       else:
         start = time.clock()
         self._content = self._returnDict(sql, args)
         end = time.clock()
-        print 'NONCACHE ( %.5f sec ) ' % (end - start) + sql, args
+        print 'NONCACHE ( %.2fms ) ' % (end - start) + sql, args
         self._cache.write(self._content)
     else:
       start = time.clock()
       self._content = self._returnDict(sql, args)
       end = time.clock()
-      print '( %.5f sec ) ' % (end - start) + sql, args
+      print '( %.2fms ) ' % (end - start) + sql, args
     return self._content
   
   # Return a single value, optimized for caching
@@ -118,7 +118,7 @@ class mysql:
       start = time.clock()
       self._db.execute(sql, args)
       end = time.clock()
-      print '( %.5f sec ) ' % (end - start) + sql, args
+      print '( %.2fms ) ' % (end - start) + sql, args
       
     except Exception, e:
       if self._log_errors:
@@ -203,7 +203,7 @@ class mysql:
   def _logSlowQuery(self):
     msg = """ -------------------------------------------------------- 
             {!s} - Slow query in {!s}
-            This query took {!s} seconds:
+            This query took {!s} msonds:
             {!s} 
             """.format(str(datetime.datetime.now()), __main__.__file__, '{0:.2f}'.format(self._query_time), self._last_query).replace('\t','')
     self._log(msg)

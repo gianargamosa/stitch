@@ -9,7 +9,7 @@ from models import *
 
 class MainHandler(BaseHandler):
     def get(self):
-      users = user_model.user_model()
+      users = user_model.select_user()
       self.render('index.html', users=users)
 
 
