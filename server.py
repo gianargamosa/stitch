@@ -1,12 +1,21 @@
 #!/usr/bin/env python
 #coding:utf-8
 
+from middlewares import *
+
 import tornado.ioloop
 import tornado.web
+import tornado.options
 
 import routes
 import sys
 import os
+
+db = mysql_middleware.db()
+db.cache(60)
+
+names = db.run_query("SELECT * FROM users")
+print names
 
 settings = {
   "template_path" : os.path.join(os.path.dirname(__file__), "templates"),
@@ -21,9 +30,8 @@ def make_app():
     **settings
   )
 
-# application = tornado.web.Application(urls.urls,**settings)
-
 if __name__ == "__main__":
   app = make_app()
   app.listen(8000)
+  tornado.options.parse_command_line()
   tornado.ioloop.IOLoop.instance().start()
