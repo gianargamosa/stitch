@@ -1,3 +1,2 @@
-from mysql_orm import *
-from slack_logger import *
+from mysql import *
 from faker import *

@@ -3,24 +3,13 @@
 
 from middlewares import *
 from models import *
+from routes import *
 
 import tornado.ioloop
 import tornado.web
 import tornado.options
-
-import routes
 import sys
 import os
-
-# f = Faker()
-
-# print f.name()
-
-# user_model.user_model()
-
-# seeds.seed_user()
-# seeds.contact_faker()
-# print names
 
 settings = {
   "template_path" : os.path.join(os.path.dirname(__file__), "views"),

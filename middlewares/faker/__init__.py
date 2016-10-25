@@ -23,7 +23,7 @@ def uses_names(func):
     _wrapped.__name__ = func.__name__
     return _wrapped
 
-class Faker(object):
+class Seeder(object):
 
     def __init__(self,
         seed=None, zip_type=None, min_age=None, max_age=None):

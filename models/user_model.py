@@ -1,7 +1,7 @@
 from middlewares import *
-import settings
+import model_config
 
-mysql = settings.mysql()
+mysql = model_config.mysql()
 mysql.cache(60)
 
 def select_user():

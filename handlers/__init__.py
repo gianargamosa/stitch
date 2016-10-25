@@ -3,7 +3,6 @@ Handler initialization script
 Imports all the files in the folder directly
 To import modules, kindly include them in modules.py in the current folder
 '''
-
 from os.path import dirname, basename, isfile
 import glob
 modules = glob.glob(dirname(__file__)+"/*.py")
