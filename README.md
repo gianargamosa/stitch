@@ -5,8 +5,7 @@ At the top of the file there should be a short introduction and/ or overview tha
 ## Code Example
 
 Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
-
-from middlewares import *
+```from middlewares import *
 from models import *
 from routes import *
 
@@ -16,14 +15,14 @@ import tornado.options
 import sys
 import os
 
-# f = Faker()
+f = Faker()
 
-# print f.name()
+print f.name()
 
-# user_model.select_user()
+user_model.select_user()
 
-# seeds.seed_user()
-# seeds.seed_contact()
+seeds.seed_user()
+seeds.seed_contact()
 
 settings = {
   "template_path" : os.path.join(os.path.dirname(__file__), "views"),
@@ -43,7 +42,7 @@ if __name__ == "__main__":
   app = make_app()
   app.listen(8888)
   tornado.options.parse_command_line()
-  tornado.ioloop.IOLoop.instance().start()
+  tornado.ioloop.IOLoop.instance().start()```
 
 ## Motivation
 
